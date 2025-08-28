@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Security Analyst Portfolio.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            background-color: white;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .project, .experience-item {
+            margin-bottom: 1rem;
+        }
+        .project h3, .experience-item h3 {
+            margin-bottom: 0.5rem;
+            color: #34495e;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Information Security Analyst</h1>
+        <p>Protecting Organizations from Evolving Cyber Threats</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>As a dedicated Information Security professional with a strong foundation in vulnerability assessments, security awareness training, and incident response, I am passionate about safeguarding organizations from cyber threats. I specialize in using SIEM, threat hunting, and log analysis tools to proactively identify and mitigate risks. My technical expertise extends to Linux, Docker, Ansible, and other technologies that bolster network security. In addition, I have hands-on experience managing help desk operations, optimizing ticketing systems, and implementing security controls like firewalls and access control lists.
+
+I am committed to helping organizations enhance their cybersecurity posture while continually expanding my knowledge of emerging technologies and best practices. My long-term goal is to stay at the forefront of the ever-evolving cybersecurity landscape.</p>
+            <a href="https://folaadelaja.github.io/Fola_Resume_Update-2025.pdf" class="button">Download Resume</a>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>B.Sc. Network & Communication Management - DeVry University</li>
+                </li>
+            </ul>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>CompTIA Security+</li>
+                <li>Certificate of Cloud Security Knowledge (CCSK)</li>
+                <li>Fortinet Certified Associate in Cybersecurity (FCAC)</li>
+                <li>Certified Meraki Networking Associate (CMNA)</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Key Skills</h2>
+            <ul>
+                <li>Risk Management & Assessment</li>
+                <li>Vulnerability & Threat Management</li>
+                <li>Security Policies & Compliance (PCI DSS, NIST, ISO27001)</li>
+                <li>Incident Management & Response</li>
+                <li>Security Operations & Monitoring</li>
+                <li>Cloud & Network Security</li>
+                <li>Security Architecture & Business Continuity</li>
+                <li>Security Awareness & Training</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Notable Projects</h2>
+            <div class="project">
+                <h3>Security Monitoring and Vulnerability Management Tools Deployment</h3>
+                <p>Deployed and configured various security tools including Nessus, Splunk, Zabbix, Wazuh, Elastic Search, and Qualys. Utilized Docker containers for streamlined deployment across Proxmox and Hyper-V environments.</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Information Security Analyst at SageNet (2015 - Present)</h3>
+                <ul>
+                    <li>Led comprehensive incident response efforts and utilized EDR systems for endpoint security.</li>
+                    <li>Conducted vulnerability assessments and penetration testing to identify and remediate security vulnerabilities.</li>
+                    <li>Managed firewall policies using FireMon and implemented critical security controls.</li>
+                    <li>Collaborated on secure architecture design and led security training sessions.</li>
+                    <li>Ensured PCI DSS compliance and managed third-party security vendors.</li>
+                    <li>Oversaw security operations, including threat detection, monitoring, and vulnerability management.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="technical-skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Security Tools: Nessus, Splunk, Zabbix, Wazuh, Elastic Search, Qualys, FireMon</li>
+                <li>Cloud Platforms: Azure (Virtual Machines, Virtual Networks)</li>
+                <li>Containerization & Orchestration: Docker, Kubernetes</li>
+                <li>Scripting & Automation: Bash, Ansible</li>
+                <li>Network & System Administration: Cisco IOS, FortiOS, Active Directory</li>
+                <li>Version Control: Git</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: fola.adelaja@gmail.com</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/fola-adelaja-4ba502249" target="_blank">https://linkedin.com/in/fola-adelaja-4ba502249</a></p>
+            <p>GitHub: <a href="https://github.com/folaadelaja/My-Projects" target="_blank">https://github.com/folaadelaja/My-Projects</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Information Security Analyst. All rights reserved.</p>
+    </footer>
+</body>
+</html>
