@@ -14,39 +14,39 @@
             font-family: 'Inter', sans-serif;
         }
         .section-title {
-            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+            @apply text-3xl font-bold text-white mb-8 text-center;
         }
         .card {
-            @apply bg-white rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:scale-105;
+            @apply bg-gray-800 rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:scale-105;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-700">
+<body class="bg-gray-900 text-gray-300">
 
     <!-- Header & Navigation -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-gray-800 shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">Fola Adelaja</a>
+            <a href="#" class="text-2xl font-bold text-white">Fola Adelaja</a>
             <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
-                <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
-                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                <a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
             </div>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
                     <i class="fas fa-bars fa-lg"></i>
                 </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
-            <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600">Skills</a>
-            <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Experience</a>
-            <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-600">Projects</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-blue-400">About</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-blue-400">Skills</a>
+            <a href="#experience" class="block py-2 text-gray-300 hover:text-blue-400">Experience</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-blue-400">Projects</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-blue-400">Contact</a>
         </div>
     </header>
 
@@ -54,8 +54,8 @@
 
         <!-- Hero Section -->
         <section id="hero" class="text-center py-20">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Information Security Analyst</h1>
-            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Protecting organizations from evolving cyber threats with expertise in vulnerability management, incident response, and security operations.</p>
+            <h1 class="text-5xl font-extrabold text-white mb-4">Information Security Analyst</h1>
+            <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">Protecting organizations from evolving cyber threats with expertise in vulnerability management, incident response, and security operations.</p>
             <a href="https://folaadelaja.github.io/Fola_Resume_Update-2025.pdf" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 inline-flex items-center space-x-2">
                 <i class="fas fa-download"></i>
                 <span>Download Resume</span>
@@ -72,27 +72,27 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16 bg-gray-50 rounded-lg">
+        <section id="skills" class="py-16 bg-gray-900 rounded-lg">
             <h2 class="section-title">Core Competencies</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                 <div class="card text-center">
-                    <i class="fas fa-shield-alt fa-3x text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Risk Management</h3>
+                    <i class="fas fa-shield-alt fa-3x text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Risk Management</h3>
                     <p>Expert in risk assessment, vulnerability, and threat management.</p>
                 </div>
                 <div class="card text-center">
-                    <i class="fas fa-file-contract fa-3x text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Compliance</h3>
+                    <i class="fas fa-file-contract fa-3x text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Compliance</h3>
                     <p>Knowledgeable in PCI DSS, NIST, and ISO27001 standards.</p>
                 </div>
                 <div class="card text-center">
-                    <i class="fas fa-exclamation-triangle fa-3x text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Incident Response</h3>
+                    <i class="fas fa-exclamation-triangle fa-3x text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Incident Response</h3>
                     <p>Skilled in incident management, response, and recovery.</p>
                 </div>
                 <div class="card text-center">
-                    <i class="fas fa-search fa-3x text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Security Operations</h3>
+                    <i class="fas fa-search fa-3x text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Security Operations</h3>
                     <p>Proficient in security monitoring, threat detection, and analysis.</p>
                 </div>
             </div>
@@ -101,39 +101,39 @@
         <!-- Technical Skills Section -->
         <section id="tech-skills" class="py-16">
             <h2 class="section-title">Technical Skills</h2>
-            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div class="max-w-4xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
                 <div class="flex flex-wrap justify-center gap-4">
-                    <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Nessus</span>
-                    <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Splunk</span>
-                    <span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Zabbix</span>
-                    <span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Wazuh</span>
-                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Elastic Search</span>
-                    <span class="bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Qualys</span>
-                    <span class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">FireMon</span>
-                    <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Azure</span>
-                    <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Docker</span>
-                    <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Kubernetes</span>
-                    <span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Bash</span>
-                    <span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Ansible</span>
-                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Cisco IOS</span>
-                    <span class="bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">FortiOS</span>
-                    <span class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Active Directory</span>
-                    <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Git</span>
+                    <span class="bg-blue-900 text-blue-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Nessus</span>
+                    <span class="bg-green-900 text-green-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Splunk</span>
+                    <span class="bg-yellow-900 text-yellow-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Zabbix</span>
+                    <span class="bg-purple-900 text-purple-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Wazuh</span>
+                    <span class="bg-indigo-900 text-indigo-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Elastic Search</span>
+                    <span class="bg-pink-900 text-pink-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Qualys</span>
+                    <span class="bg-red-900 text-red-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">FireMon</span>
+                    <span class="bg-gray-700 text-gray-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Azure</span>
+                    <span class="bg-blue-900 text-blue-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Docker</span>
+                    <span class="bg-green-900 text-green-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Kubernetes</span>
+                    <span class="bg-yellow-900 text-yellow-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Bash</span>
+                    <span class="bg-purple-900 text-purple-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Ansible</span>
+                    <span class="bg-indigo-900 text-indigo-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Cisco IOS</span>
+                    <span class="bg-pink-900 text-pink-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">FortiOS</span>
+                    <span class="bg-red-900 text-red-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Active Directory</span>
+                    <span class="bg-gray-700 text-gray-300 text-sm font-medium mr-2 px-3 py-1.5 rounded-full">Git</span>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-16 bg-gray-50 rounded-lg">
+        <section id="experience" class="py-16 bg-gray-900 rounded-lg">
             <h2 class="section-title">Professional Experience</h2>
             <div class="max-w-4xl mx-auto">
                 <div class="card">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3 class="text-2xl font-semibold text-gray-800">Information Security Analyst</h3>
-                            <p class="text-lg text-blue-600 font-medium">SageNet</p>
+                            <h3 class="text-2xl font-semibold text-white">Information Security Analyst</h3>
+                            <p class="text-lg text-blue-400 font-medium">SageNet</p>
                         </div>
-                        <span class="text-md text-gray-500">2015 - Present</span>
+                        <span class="text-md text-gray-400">2015 - Present</span>
                     </div>
                     <ul class="mt-4 list-disc list-inside space-y-2 text-lg">
                         <li>Led comprehensive incident response efforts and utilized EDR systems for endpoint security.</li>
@@ -152,31 +152,31 @@
             <h2 class="section-title">Notable Projects</h2>
             <div class="max-w-4xl mx-auto">
                 <div class="card">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Security Tools Deployment</h3>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Security Tools Deployment</h3>
                     <p class="text-lg">Deployed and configured various security tools including Nessus, Splunk, Zabbix, Wazuh, Elastic Search, and Qualys. Utilized Docker containers for streamlined deployment across Proxmox and Hyper-V environments.</p>
                 </div>
             </div>
         </section>
 
         <!-- Education & Certifications -->
-        <section id="education-certs" class="py-16 bg-gray-50 rounded-lg">
+        <section id="education-certs" class="py-16 bg-gray-900 rounded-lg">
              <h2 class="section-title">Education & Certifications</h2>
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                 <div class="card">
-                    <h3 class="text-2xl font-semibold mb-4 text-center">Education</h3>
+                    <h3 class="text-2xl font-semibold text-white mb-4 text-center">Education</h3>
                      <div class="text-center">
-                        <i class="fas fa-graduation-cap fa-3x text-blue-600 mb-4"></i>
+                        <i class="fas fa-graduation-cap fa-3x text-blue-400 mb-4"></i>
                         <p class="text-lg font-medium">B.Sc. Network & Communication Management</p>
                         <p class="text-md text-gray-500">DeVry University</p>
                     </div>
                 </div>
                 <div class="card">
-                     <h3 class="text-2xl font-semibold mb-4 text-center">Certifications</h3>
+                     <h3 class="text-2xl font-semibold text-white mb-4 text-center">Certifications</h3>
                      <ul class="space-y-3 text-lg text-center">
-                        <li class="flex items-center justify-center"><i class="fas fa-certificate text-yellow-500 mr-2"></i>CompTIA Security+</li>
+                        <li class="flex items-center justify-center"><i class="fas fa-certificate text-yellow-400 mr-2"></i>CompTIA Security+</li>
                         <li class="flex items-center justify-center"><i class="fas fa-cloud text-blue-400 mr-2"></i>CCSK</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-shield-alt text-green-500 mr-2"></i>FCAC</li>
-                        <li class="flex items-center justify-center"><i class="fas fa-network-wired text-purple-500 mr-2"></i>CMNA</li>
+                        <li class="flex items-center justify-center"><i class="fas fa-shield-alt text-green-400 mr-2"></i>FCAC</li>
+                        <li class="flex items-center justify-center"><i class="fas fa-network-wired text-purple-400 mr-2"></i>CMNA</li>
                     </ul>
                 </div>
             </div>
@@ -187,12 +187,12 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="card max-w-lg mx-auto text-center">
                 <p class="text-lg mb-6">I'm always open to discussing new opportunities and challenges in cybersecurity. Feel free to reach out!</p>
-                <p class="text-lg font-semibold mb-2">fola.adelaja@gmail.com</p>
+                <p class="text-lg font-semibold text-white mb-2">fola.adelaja@gmail.com</p>
                 <div class="flex justify-center space-x-6 mt-6">
-                    <a href="https://linkedin.com/in/fola-adelaja-4ba502249" target="_blank" class="text-gray-600 hover:text-blue-700 transition-colors">
+                    <a href="https://linkedin.com/in/fola-adelaja-4ba502249" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
                         <i class="fab fa-linkedin fa-3x"></i>
                     </a>
-                    <a href="https://github.com/folaadelaja/My-Projects" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
+                    <a href="https://github.com/folaadelaja/My-Projects" target="_blank" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-github fa-3x"></i>
                     </a>
                 </div>
