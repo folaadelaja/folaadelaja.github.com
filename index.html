@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fola Adelaja | Senior Information Security Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #2a8fa8;
+            --teal-light: #3ab3cf;
+            --teal-dark: #1e6e83;
+        }
+        body { font-family: 'Inter', sans-serif; }
+
+        .teal { color: var(--teal); }
+        .bg-teal { background-color: var(--teal); }
+        .border-teal { border-color: var(--teal); }
+
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--teal);
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            background-color: #1e2533;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            border: 1px solid #2d3748;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 1px var(--teal-dark), 0 4px 20px rgba(42, 143, 168, 0.12);
+        }
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background-color: rgba(42, 143, 168, 0.15);
+            color: #5fcfea;
+            border: 1px solid rgba(42, 143, 168, 0.3);
+            margin: 0.2rem;
+        }
+        .skill-category-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 0.4rem;
+        }
+        .exp-subsection-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .bullet-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #94a3b8;
+        }
+        .bullet-item::before {
+            content: '▸';
+            color: var(--teal);
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .nav-link {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: var(--teal-light); }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(42, 143, 168, 0.08);
+            border-left: 3px solid var(--teal);
+            border-radius: 0 0.375rem 0.375rem 0;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #2d3748;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+        .cert-item:last-child { border-bottom: none; }
+
+        /* Subtle animated gradient on hero */
+        .hero-bg {
+            background: linear-gradient(135deg, #0f1624 0%, #131e2e 50%, #0e1822 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-300" style="background-color: #0d1117;">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 border-b border-gray-800" style="background-color: #111827;">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <span class="text-white font-bold text-lg tracking-tight">Fola Adelaja</span>
+                <span class="text-xs text-gray-500 ml-2 hidden sm:inline">Senior InfoSec Analyst</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-7">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#competencies" class="nav-link">Competencies</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://folaadelaja.github.io/Fola_Adelaja_Resume_vr03_26.pdf"
+                   class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-md bg-teal hover:opacity-90 transition text-white"
+                   style="background-color: var(--teal);">
+                    <i class="fas fa-download text-xs"></i> Resume
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-gray-400 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2" style="background-color: #111827;">
+            <a href="#about" class="block py-1.5 nav-link">About</a>
+            <a href="#competencies" class="block py-1.5 nav-link">Competencies</a>
+            <a href="#skills" class="block py-1.5 nav-link">Skills</a>
+            <a href="#experience" class="block py-1.5 nav-link">Experience</a>
+            <a href="#projects" class="block py-1.5 nav-link">Projects</a>
+            <a href="#education" class="block py-1.5 nav-link">Education</a>
+            <a href="#contact" class="block py-1.5 nav-link">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-bg py-24 px-6 text-center border-b border-gray-800">
+        <p class="text-sm font-semibold tracking-widest uppercase mb-3" style="color: var(--teal);">Senior Information Security Analyst &nbsp;|&nbsp; Security Engineer</p>
+        <h1 class="text-5xl sm:text-6xl font-extrabold text-white tracking-tight mb-6">Fola Adelaja</h1>
+        <p class="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
+            Security professional with <strong class="text-gray-200">10+ years</strong> of experience designing, implementing, and operating enterprise security programs across cloud and on-premise environments. Proven expertise in SIEM operations, vulnerability management, incident response leadership, and regulatory compliance including PCI DSS, NIST, and ISO 27001.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#experience"
+               class="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-md text-white transition-opacity hover:opacity-90"
+               style="background-color: var(--teal);">
+                View Experience
+            </a>
+            <a href="https://folaadelaja.github.io/Fola_Adelaja_Resume_vr03_26.pdf"
+               class="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-md text-gray-300 border border-gray-600 hover:border-gray-400 transition-colors">
+                <i class="fas fa-download text-sm"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+
+        <!-- Professional Highlights -->
+        <section id="about">
+            <h2 class="section-title">Professional Highlights</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div class="highlight-item"><i class="fas fa-shield-alt text-sm" style="color: var(--teal);"></i> 10+ years in enterprise cybersecurity operations</div>
+                <div class="highlight-item"><i class="fas fa-bug text-sm" style="color: var(--teal);"></i> Led vulnerability management programs across enterprise environments</div>
+                <div class="highlight-item"><i class="fas fa-exclamation-circle text-sm" style="color: var(--teal);"></i> Directed incident response for complex security events</div>
+                <div class="highlight-item"><i class="fas fa-file-contract text-sm" style="color: var(--teal);"></i> Supported enterprise PCI DSS compliance &amp; audit readiness</div>
+                <div class="highlight-item"><i class="fas fa-eye text-sm" style="color: var(--teal);"></i> Built enterprise security monitoring &amp; detection capabilities</div>
+                <div class="highlight-item"><i class="fas fa-cloud text-sm" style="color: var(--teal);"></i> Skilled in cloud &amp; on-premise security architecture</div>
+            </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section id="competencies">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="card">
+                <div class="flex flex-wrap">
+                    <span class="tag">Security Operations</span>
+                    <span class="tag">Incident Response</span>
+                    <span class="tag">Threat Detection</span>
+                    <span class="tag">Vulnerability Management</span>
+                    <span class="tag">Security Architecture</span>
+                    <span class="tag">SIEM Engineering (Splunk, Elasticsearch)</span>
+                    <span class="tag">Endpoint Security (EDR)</span>
+                    <span class="tag">Identity &amp; Access Management</span>
+                    <span class="tag">Privileged Access Governance</span>
+                    <span class="tag">Cloud &amp; Infrastructure Security</span>
+                    <span class="tag">Network Security Engineering</span>
+                    <span class="tag">PCI DSS Compliance</span>
+                    <span class="tag">Risk Assessments</span>
+                    <span class="tag">Security Awareness Programs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <div class="card">
+                    <div class="skill-category-label">Security Monitoring &amp; Detection</div>
+                    <div class="flex flex-wrap mt-1">
+                        <span class="tag">Splunk</span>
+                        <span class="tag">Elasticsearch</span>
+                        <span class="tag">SIEM Engineering</span>
+                        <span class="tag">EDR</span>
+                        <span class="tag">Log Analysis</span>
+                        <span class="tag">Threat Detection</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="skill-category-label">Vulnerability &amp; Risk Management</div>
+                    <div class="flex flex-wrap mt-1">
+                        <span class="tag">Nessus</span>
+                        <span class="tag">Qualys</span>
+                        <span class="tag">Wazuh</span>
+                        <span class="tag">Vulnerability Lifecycle Mgmt</span>
+                        <span class="tag">Zabbix</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="skill-category-label">Network &amp; Infrastructure Security</div>
+                    <div class="flex flex-wrap mt-1">
+                        <span class="tag">Fortinet</span>
+                        <span class="tag">Meraki</span>
+                        <span class="tag">FireMon</span>
+                        <span class="tag">VPN Security</span>
+                        <span class="tag">SD-WAN</span>
+                        <span class="tag">Wireless Security</span>
+                        <span class="tag">Cisco IOS</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="skill-category-label">Compliance &amp; Governance</div>
+                    <div class="flex flex-wrap mt-1">
+                        <span class="tag">PCI DSS 4.0</span>
+                        <span class="tag">NIST Framework</span>
+                        <span class="tag">ISO 27001</span>
+                        <span class="tag">Security Audits</span>
+                        <span class="tag">Risk Assessments</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="skill-category-label">Infrastructure &amp; Automation</div>
+                    <div class="flex flex-wrap mt-1">
+                        <span class="tag">Docker</span>
+                        <span class="tag">Proxmox</span>
+                        <span class="tag">Hyper-V</span>
+                        <span class="tag">Linux Administration</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="skill-category-label">Cloud &amp; Identity</div>
+                    <div class="flex flex-wrap mt-1">
+                        <span class="tag">Azure</span>
+                        <span class="tag">Active Directory</span>
+                        <span class="tag">IAM Governance</span>
+                        <span class="tag">Privileged Access</span>
+                        <span class="tag">Kubernetes</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="card">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Information Security Analyst</h3>
+                        <p class="font-semibold mt-0.5" style="color: var(--teal);">SageNet</p>
+                    </div>
+                    <span class="text-sm text-gray-500 bg-gray-800 px-3 py-1 rounded-full self-start">2015 – Present</span>
+                </div>
+
+                <!-- Sub-section: Security Operations -->
+                <div class="exp-subsection-title">Security Operations &amp; Threat Detection</div>
+                <div class="space-y-1">
+                    <div class="bullet-item">Managed enterprise SIEM monitoring and alert tuning using Splunk and Elasticsearch, significantly improving detection accuracy and reducing false positives.</div>
+                    <div class="bullet-item">Led security event triage and escalation in coordination with third-party SOC teams to ensure rapid identification and containment of threats.</div>
+                    <div class="bullet-item">Coordinated full lifecycle incident response including investigation, containment, eradication, recovery, and post-incident analysis.</div>
+                    <div class="bullet-item">Designed and delivered enterprise security awareness programs that reduced phishing and social engineering risk across the organization.</div>
+                </div>
+
+                <!-- Sub-section: Identity & Access -->
+                <div class="exp-subsection-title">Identity &amp; Access Security</div>
+                <div class="space-y-1">
+                    <div class="bullet-item">Administered Identity and Access Management (IAM) governance including role validation, periodic access reviews, and privileged account monitoring.</div>
+                    <div class="bullet-item">Strengthened access control policies to align with compliance frameworks and internal security standards.</div>
+                </div>
+
+                <!-- Sub-section: Network Security -->
+                <div class="exp-subsection-title">Network Security Engineering</div>
+                <div class="space-y-1">
+                    <div class="bullet-item">Conducted firewall policy reviews and network security rule audits across Fortinet and Meraki environments to ensure least-privilege access and PCI DSS compliance.</div>
+                    <div class="bullet-item">Collaborated with network engineering teams to enhance segmentation and improve perimeter security.</div>
+                </div>
+
+                <!-- Sub-section: Vulnerability Management -->
+                <div class="exp-subsection-title">Vulnerability Management &amp; Risk Reduction</div>
+                <div class="space-y-1">
+                    <div class="bullet-item">Owned the enterprise vulnerability management program across infrastructure and applications including scanning, risk prioritization, remediation tracking, and executive reporting.</div>
+                    <div class="bullet-item">Coordinated remediation initiatives across engineering, infrastructure, and development teams to resolve security findings and reduce enterprise risk exposure.</div>
+                </div>
+
+                <!-- Sub-section: Compliance -->
+                <div class="exp-subsection-title">Compliance &amp; Security Governance</div>
+                <div class="space-y-1">
+                    <div class="bullet-item">Led PCI DSS compliance initiatives including control validation, audit preparation, evidence collection, and coordination with Qualified Security Assessors (QSA).</div>
+                    <div class="bullet-item">Ensured security controls aligned with regulatory and organizational requirements.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Projects -->
+        <section id="projects">
+            <h2 class="section-title">Security Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <div class="card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(42,143,168,0.15);">
+                            <i class="fas fa-chart-line" style="color: var(--teal);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Security Monitoring Platform Deployment</h3>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="bullet-item">Implemented and configured security monitoring tools including Splunk, Wazuh, Nessus, and Zabbix to strengthen detection and monitoring capabilities.</div>
+                        <div class="bullet-item">Improved centralized logging and security visibility across infrastructure environments.</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(42,143,168,0.15);">
+                            <i class="fas fa-robot" style="color: var(--teal);"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Vulnerability Management Automation</h3>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="bullet-item">Integrated Qualys cloud-based vulnerability scanning to streamline vulnerability discovery and reporting.</div>
+                        <div class="bullet-item">Used Docker to deploy security tools efficiently across virtualized environments including Proxmox and Hyper-V.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certifications & Education -->
+        <section id="education">
+            <h2 class="section-title">Certifications &amp; Education</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Certifications -->
+                <div class="card">
+                    <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-certificate text-yellow-400 text-sm"></i> Certifications
+                    </h3>
+                    <div>
+                        <div class="cert-item">
+                            <i class="fas fa-check-circle text-xs" style="color: var(--teal);"></i>
+                            <span>CompTIA Security+</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-check-circle text-xs" style="color: var(--teal);"></i>
+                            <span>Certificate of Cloud Security Knowledge (CCSK)</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-check-circle text-xs" style="color: var(--teal);"></i>
+                            <span>Fortinet Certified Associate in Cybersecurity (FCAC)</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-check-circle text-xs" style="color: var(--teal);"></i>
+                            <span>Certified Meraki Networking Associate (CMNA)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="card">
+                    <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-graduation-cap text-blue-400 text-sm"></i> Education &amp; Training
+                    </h3>
+                    <div class="mb-4">
+                        <p class="text-white font-semibold text-sm">Bachelor of Science</p>
+                        <p class="text-gray-400 text-sm">Network &amp; Communication Management</p>
+                        <p class="text-sm mt-0.5" style="color: var(--teal);">DeVry University</p>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Professional Training</p>
+                        <div class="space-y-1.5">
+                            <div class="bullet-item">CISA Training – Cybrary</div>
+                            <div class="bullet-item">CISSP Training – Cybrary</div>
+                            <div class="bullet-item">Risk &amp; Incident Response Certification – ISC2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="card max-w-2xl mx-auto text-center">
+                <p class="text-gray-400 mb-6 text-sm">Open to discussing new opportunities and challenges in cybersecurity. Feel free to reach out.</p>
+                <div class="flex flex-wrap justify-center gap-y-4 gap-x-8 mb-8 text-sm">
+                    <div class="flex items-center gap-2 text-gray-300">
+                        <i class="fas fa-map-marker-alt text-xs" style="color: var(--teal);"></i>
+                        <span>Atlanta, GA</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300">
+                        <i class="fas fa-phone text-xs" style="color: var(--teal);"></i>
+                        <a href="tel:6783657674" class="hover:text-white transition-colors">678-365-7674</a>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300">
+                        <i class="fas fa-envelope text-xs" style="color: var(--teal);"></i>
+                        <a href="mailto:fola.adelaja@gmail.com" class="hover:text-white transition-colors">fola.adelaja@gmail.com</a>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-6">
+                    <a href="https://linkedin.com/in/adefolaju-adelaja-4ba502249" target="_blank"
+                       class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/folaadelaja" target="_blank"
+                       class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github fa-lg"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://folaadelaja.github.io/Fola_Adelaja_Resume_vr03_26.pdf" target="_blank"
+                       class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors" style="color: var(--teal);">
+                        <i class="fas fa-file-pdf fa-lg"></i>
+                        <span>Resume PDF</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-800 text-center py-6 text-sm text-gray-600" style="background-color: #111827;">
+        &copy; 2025 Fola Adelaja. All rights reserved.
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        for (let link of menu.getElementsByTagName('a')) {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        }
+    </script>
+
+</body>
+</html>
