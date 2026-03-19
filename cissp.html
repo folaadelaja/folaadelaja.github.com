@@ -1,1 +1,1610 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CISSP Exam Prep 2026 - Premium Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    :root {
+        --primary: #d4af37;
+        --primary-dark: #b8941f;
+        --dark-bg: #0f0f0f;
+        --card-bg: #1a1a1a;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --success: #10b981;
+        --error: #ef4444;
+        --warning: #f59e0b;
+        --accent: #06b6d4;
+        --transition: all 0.3s ease;
+    }
+
+    body.light-mode {
+        --primary: #c9a961;
+        --primary-dark: #b8941f;
+        --dark-bg: #f8f8f8;
+        --card-bg: #ffffff;
+        --text-primary: #1a1a1a;
+        --text-secondary: #555555;
+        --success: #059669;
+        --error: #dc2626;
+        --warning: #d97706;
+        --accent: #0891b2;
+    }
+
+    html, body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--dark-bg);
+        color: var(--text-primary);
+        height: 100vh;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .app-container {
+        display: flex;
+        height: 100vh;
+        background: var(--dark-bg);
+        transition: var(--transition);
+    }
+
+    .sidebar {
+        width: 280px;
+        background: var(--card-bg);
+        border-right: 1px solid rgba(212, 175, 55, 0.1);
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .nav-item {
+        padding: 12px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        border: 1px solid transparent;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-secondary);
+        background: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-item:hover {
+        background: rgba(212, 175, 55, 0.1);
+        color: var(--primary);
+    }
+
+    .nav-item.active {
+        background: rgba(212, 175, 55, 0.2);
+        color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .header {
+        padding: 20px 30px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        background: rgba(26, 26, 26, 0.5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
+    }
+
+    .header-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-primary);
+    }
+
+    .header-stats {
+        display: flex;
+        gap: 20px;
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .stat-label {
+        font-size: 12px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+    }
+
+    .content-area {
+        flex: 1;
+        overflow-y: auto;
+        padding: 30px;
+        transition: var(--transition);
+    }
+
+    .question-card {
+        background: var(--card-bg);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 20px;
+        animation: slideIn 0.4s ease;
+        transition: var(--transition);
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .question-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    .question-meta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .badge-domain {
+        background: rgba(212, 175, 55, 0.2);
+        color: var(--primary);
+    }
+
+    .badge-difficulty {
+        background: rgba(245, 158, 11, 0.2);
+        color: var(--warning);
+    }
+
+    .badge-difficulty.easy {
+        background: rgba(16, 185, 129, 0.2);
+        color: var(--success);
+    }
+
+    .badge-difficulty.hard {
+        background: rgba(239, 68, 68, 0.2);
+        color: var(--error);
+    }
+
+    .question-number {
+        font-size: 12px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+    }
+
+    .bookmark-btn {
+        background: none;
+        border: 2px solid var(--text-secondary);
+        color: var(--text-secondary);
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .bookmark-btn.bookmarked {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: var(--dark-bg);
+    }
+
+    .question-text {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .option {
+        padding: 14px 16px;
+        border: 2px solid rgba(212, 175, 55, 0.1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        background: transparent;
+        color: var(--text-primary);
+        text-align: left;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: inherit;
+    }
+
+    .option:hover:not(:disabled) {
+        border-color: var(--primary);
+        background: rgba(212, 175, 55, 0.05);
+    }
+
+    .option-label {
+        width: 24px;
+        height: 24px;
+        border: 2px solid var(--text-secondary);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: var(--transition);
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .option:hover:not(:disabled) .option-label {
+        border-color: var(--primary);
+    }
+
+    .option.selected .option-label {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: var(--dark-bg);
+    }
+
+    .option.correct {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: var(--success);
+    }
+
+    .option.correct .option-label {
+        background: var(--success);
+        border-color: var(--success);
+        color: white;
+    }
+
+    .option.incorrect {
+        background: rgba(239, 68, 68, 0.1);
+        border-color: var(--error);
+    }
+
+    .option.incorrect .option-label {
+        background: var(--error);
+        border-color: var(--error);
+        color: white;
+    }
+
+    .explanation {
+        margin-top: 20px;
+        padding: 16px;
+        background: rgba(6, 182, 212, 0.1);
+        border-left: 3px solid var(--accent);
+        border-radius: 6px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+    }
+
+    .buttons-group {
+        display: flex;
+        gap: 12px;
+        margin-top: 25px;
+        justify-content: flex-end;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-family: inherit;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: var(--dark-bg);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+    }
+
+    .btn-primary:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+        background: rgba(212, 175, 55, 0.1);
+    }
+
+    .btn-secondary:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .btn-small {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .dashboard {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .dashboard-card {
+        background: var(--card-bg);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        border-radius: 12px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        transition: var(--transition);
+    }
+
+    .dashboard-card-title {
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .dashboard-card-value {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .dashboard-card-subtitle {
+        font-size: 12px;
+        color: var(--text-secondary);
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: var(--primary);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+    }
+
+    .filters {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .filter-chip {
+        padding: 8px 14px;
+        border: 1px solid var(--text-secondary);
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 12px;
+        background: transparent;
+        color: var(--text-secondary);
+        transition: var(--transition);
+        font-family: inherit;
+    }
+
+    .filter-chip:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .filter-chip.active {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: var(--dark-bg);
+    }
+
+    .timer {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary);
+        background: rgba(212, 175, 55, 0.1);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-family: 'Courier New', monospace;
+    }
+
+    .timer.warning {
+        color: var(--warning);
+        background: rgba(245, 158, 11, 0.1);
+    }
+
+    .timer.danger {
+        color: var(--error);
+        background: rgba(239, 68, 68, 0.1);
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--text-secondary);
+    }
+
+    .empty-state-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .empty-state-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--text-primary);
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    @media (max-width: 768px) {
+        .app-container {
+            flex-direction: column;
+        }
+
+        .sidebar {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 15px;
+        }
+
+        .nav-menu {
+            flex-direction: row;
+            gap: 5px;
+            overflow-x: auto;
+        }
+
+        .header {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .header-stats {
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .content-area {
+            padding: 15px;
+        }
+
+        .dashboard {
+            grid-template-columns: 1fr;
+        }
+
+        .question-card {
+            padding: 20px;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.3);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(212, 175, 55, 0.5);
+    }
+
+    .study-guide-content {
+        line-height: 1.8;
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
+
+    .study-guide-point {
+        margin-bottom: 8px;
+    }
+
+    .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        background: var(--card-bg);
+        border: 2px solid rgba(212, 175, 55, 0.2);
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        transition: var(--transition);
+        z-index: 100;
+    }
+
+    .theme-toggle:hover {
+        border-color: var(--primary);
+        background: rgba(212, 175, 55, 0.1);
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+        .theme-toggle {
+            top: 10px;
+            right: 15px;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</div>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">🛡️ CISSP Prep 2026</div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-view="dashboard">📊 Dashboard</button>
+                <button class="nav-item" data-view="practice">📝 Practice</button>
+                <button class="nav-item" data-view="exam">⏱️ Mock Exam</button>
+                <button class="nav-item" data-view="bookmarks">⭐ Bookmarked</button>
+                <button class="nav-item" data-view="results">📈 Results</button>
+                <button class="nav-item" data-view="study">📚 Study Guide</button>
+            </nav>
+        </div>
+
+```
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header" id="header">
+            <div class="header-title" id="headerTitle">Dashboard</div>
+            <div class="header-stats" id="headerStats">
+                <div class="stat-item">
+                    <div class="stat-value" id="statsAnswered">0</div>
+                    <div class="stat-label">Answered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="statsCorrect">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="statsAccuracy">0%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area" id="contentArea">
+            <!-- Views will be rendered here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // CISSP Question Database
+    const CISSP_QUESTIONS = [
+        {
+            id: 1,
+            domain: "Security & Risk Management",
+            difficulty: "medium",
+            question: "Which of the following best describes the purpose of a Business Impact Analysis (BIA)?",
+            options: [
+                "To identify and quantify the potential impact of a disruption to business operations",
+                "To eliminate all risks to the organization",
+                "To identify the cost of security controls",
+                "To determine the physical location of critical assets"
+            ],
+            correctAnswer: 0,
+            explanation: "A BIA identifies and quantifies the potential business impact if critical functions or processes are disrupted. It helps prioritize recovery efforts based on business importance."
+        },
+        {
+            id: 2,
+            domain: "Security & Risk Management",
+            difficulty: "hard",
+            question: "An organization is considering a risk mitigation strategy for a vulnerability that could result in a potential loss of $500,000. The cost to implement the mitigation control is $150,000 annually. What is the primary benefit of this mitigation?",
+            options: [
+                "The control cost exceeds potential loss, so mitigation is not justified",
+                "Risk is reduced if the control effectiveness is greater than 30%",
+                "The organization should implement the control only if it prevents all losses",
+                "Risk acceptance is always better than mitigation"
+            ],
+            correctAnswer: 1,
+            explanation: "If the control effectiveness reduces the risk by more than 30% ($150k/$500k), the mitigation is cost-justified."
+        },
+        {
+            id: 3,
+            domain: "Security & Risk Management",
+            difficulty: "easy",
+            question: "Which of the following is NOT a primary component of a comprehensive information security governance framework?",
+            options: [
+                "Security policies and procedures",
+                "Risk assessment and management",
+                "Incident response and recovery",
+                "Employee lunch preferences"
+            ],
+            correctAnswer: 3,
+            explanation: "Employee lunch preferences are not related to security governance. The other options are core components."
+        },
+        {
+            id: 4,
+            domain: "Asset Security",
+            difficulty: "medium",
+            question: "A company needs to protect sensitive data stored on employee laptops. Which of the following controls provides the strongest protection if a device is lost or stolen?",
+            options: [
+                "Full-disk encryption with strong authentication",
+                "BIOS password protection",
+                "Password-only login",
+                "Physical security locks on the device"
+            ],
+            correctAnswer: 0,
+            explanation: "Full-disk encryption ensures data cannot be accessed even if the physical device is compromised."
+        },
+        {
+            id: 5,
+            domain: "Asset Security",
+            difficulty: "hard",
+            question: "Which data classification level typically requires the highest level of protection and has the most restrictive access controls?",
+            options: [
+                "Public",
+                "Internal Use Only",
+                "Confidential/Restricted",
+                "Sensitive"
+            ],
+            correctAnswer: 2,
+            explanation: "Confidential or Restricted data is the highest classification level and requires the strictest controls."
+        },
+        {
+            id: 6,
+            domain: "Asset Security",
+            difficulty: "easy",
+            question: "What is the primary purpose of a data inventory?",
+            options: [
+                "To count the total bytes of data stored",
+                "To identify, classify, and track all data assets and their locations",
+                "To increase data storage capacity",
+                "To encrypt all organizational data"
+            ],
+            correctAnswer: 1,
+            explanation: "A data inventory helps organizations understand what data they have, where it's stored, and who should have access."
+        },
+        {
+            id: 7,
+            domain: "Security Architecture & Design",
+            difficulty: "medium",
+            question: "Which of the following best represents the principle of 'least privilege'?",
+            options: [
+                "Granting all users administrative access to reduce support costs",
+                "Granting users the minimum access required to perform their job functions",
+                "Restricting all access to critical systems",
+                "Allowing temporary escalated privileges without logging"
+            ],
+            correctAnswer: 1,
+            explanation: "Least privilege means granting only the minimum necessary permissions required for users to complete their assigned tasks."
+        },
+        {
+            id: 8,
+            domain: "Security Architecture & Design",
+            difficulty: "hard",
+            question: "In a defense-in-depth strategy, what is the primary advantage of implementing multiple layers of security controls?",
+            options: [
+                "It eliminates the need for encryption",
+                "It ensures that if one layer is breached, others continue to provide protection",
+                "It reduces the need for security awareness training",
+                "It guarantees 100% protection against all attacks"
+            ],
+            correctAnswer: 1,
+            explanation: "Defense-in-depth uses multiple overlapping controls so that if one is bypassed or fails, others continue to protect the system."
+        },
+        {
+            id: 9,
+            domain: "Communication & Network Security",
+            difficulty: "easy",
+            question: "Which protocol is considered secure for remote access and why?",
+            options: [
+                "SSH - uses encryption for authentication and data transmission",
+                "Telnet - allows remote administration",
+                "HTTP - is the standard web protocol",
+                "FTP - enables file transfers"
+            ],
+            correctAnswer: 0,
+            explanation: "SSH (Secure Shell) provides encrypted communication channels for remote administration."
+        },
+        {
+            id: 10,
+            domain: "Communication & Network Security",
+            difficulty: "medium",
+            question: "What is the primary purpose of a firewall in network security?",
+            options: [
+                "To prevent all network traffic",
+                "To monitor and control incoming and outgoing network traffic based on defined security rules",
+                "To encrypt all data on the network",
+                "To eliminate the need for other security controls"
+            ],
+            correctAnswer: 1,
+            explanation: "Firewalls enforce security policies by allowing or blocking traffic based on predefined rules."
+        },
+        {
+            id: 11,
+            domain: "Identity & Access Management",
+            difficulty: "easy",
+            question: "What is the first step in the AAA (Authentication, Authorization, Accounting) process?",
+            options: [
+                "Authorization",
+                "Authentication",
+                "Accounting",
+                "Auditing"
+            ],
+            correctAnswer: 1,
+            explanation: "Authentication verifies the user's identity first, then authorization determines what they can do."
+        },
+        {
+            id: 12,
+            domain: "Identity & Access Management",
+            difficulty: "medium",
+            question: "Which multi-factor authentication method is considered the most secure?",
+            options: [
+                "Something you know (password)",
+                "Something you have and something you are (hardware token + biometric)",
+                "Something you know and something you have (password + SMS code)",
+                "Only something you know (password)"
+            ],
+            correctAnswer: 1,
+            explanation: "Using multiple factors from different categories provides stronger security."
+        },
+        {
+            id: 13,
+            domain: "Security Assessment & Testing",
+            difficulty: "medium",
+            question: "What is the primary difference between a vulnerability scan and a penetration test?",
+            options: [
+                "There is no difference",
+                "A vulnerability scan identifies potential weaknesses; a penetration test attempts to exploit them",
+                "A penetration test is cheaper",
+                "A vulnerability scan requires more technical expertise"
+            ],
+            correctAnswer: 1,
+            explanation: "Vulnerability scans identify potential issues automatically, while penetration tests actively attempt exploitation."
+        },
+        {
+            id: 14,
+            domain: "Security Assessment & Testing",
+            difficulty: "easy",
+            question: "Which type of security test is performed with no knowledge of the target system?",
+            options: [
+                "White-box testing",
+                "Gray-box testing",
+                "Black-box testing",
+                "Clear-box testing"
+            ],
+            correctAnswer: 2,
+            explanation: "Black-box testing simulates an external attacker with no knowledge of internal systems."
+        },
+        {
+            id: 15,
+            domain: "Security Operations",
+            difficulty: "medium",
+            question: "What is the primary goal of an incident response plan?",
+            options: [
+                "To prevent all incidents from occurring",
+                "To minimize the time and impact of security incidents through a coordinated response",
+                "To ensure the attacker is always caught",
+                "To avoid any business interruption"
+            ],
+            correctAnswer: 1,
+            explanation: "An incident response plan aims to detect, respond to, and recover from incidents quickly."
+        },
+        {
+            id: 16,
+            domain: "Security Operations",
+            difficulty: "easy",
+            question: "What is the primary purpose of a Security Operations Center (SOC)?",
+            options: [
+                "To manage physical security only",
+                "To monitor, detect, analyze, and respond to security incidents 24/7",
+                "To prevent employees from using the internet",
+                "To eliminate all security risks"
+            ],
+            correctAnswer: 1,
+            explanation: "A SOC continuously monitors systems and networks to detect and respond to security incidents."
+        },
+        {
+            id: 17,
+            domain: "Software Development Security",
+            difficulty: "medium",
+            question: "What is the primary benefit of performing code reviews in the software development process?",
+            options: [
+                "To increase development time",
+                "To identify security vulnerabilities, bugs, and design flaws before deployment",
+                "To eliminate the need for testing",
+                "To reduce the number of developers needed"
+            ],
+            correctAnswer: 1,
+            explanation: "Code reviews catch security issues early in development when they're cheaper to fix."
+        },
+        {
+            id: 18,
+            domain: "Software Development Security",
+            difficulty: "easy",
+            question: "What does OWASP stand for?",
+            options: [
+                "Open Web Application Security Project",
+                "Online Web Application Security Platform",
+                "Organization of Web Architects and Security Professionals",
+                "Open World Application Systems Protocol"
+            ],
+            correctAnswer: 0,
+            explanation: "OWASP is a nonprofit foundation providing guidance on web application security."
+        }
+    ];
+
+    // App State
+    let state = {
+        currentView: 'dashboard',
+        currentQuestionIndex: 0,
+        selectedAnswers: {},
+        bookmarked: new Set(),
+        examMode: false,
+        timeLeft: null,
+        selectedDomain: null,
+        selectedDifficulty: null,
+        progress: {},
+        examStarted: false
+    };
+
+    // Load data from localStorage
+    function loadData() {
+        const saved = localStorage.getItem('cissp_data');
+        if (saved) {
+            const data = JSON.parse(saved);
+            state.selectedAnswers = data.selectedAnswers || {};
+            state.bookmarked = new Set(data.bookmarked || []);
+            state.progress = data.progress || {};
+        }
+    }
+
+    // Save data to localStorage
+    function saveData() {
+        localStorage.setItem('cissp_data', JSON.stringify({
+            selectedAnswers: state.selectedAnswers,
+            bookmarked: [...state.bookmarked],
+            progress: state.progress
+        }));
+    }
+
+    // Calculate statistics
+    function getStats() {
+        const questionsAnswered = Object.keys(state.selectedAnswers).length;
+        const correctAnswers = Object.values(state.progress).filter(p => p.correct).length;
+        const accuracy = questionsAnswered > 0 ? ((correctAnswers / questionsAnswered) * 100).toFixed(1) : 0;
+
+        const domainStats = {};
+        CISSP_QUESTIONS.forEach(q => {
+            if (!domainStats[q.domain]) {
+                domainStats[q.domain] = { total: 0, correct: 0 };
+            }
+            domainStats[q.domain].total++;
+            if (state.progress[q.id]?.correct) {
+                domainStats[q.domain].correct++;
+            }
+        });
+
+        return {
+            questionsAnswered,
+            correctAnswers,
+            accuracy,
+            domainStats
+        };
+    }
+
+    // Update header stats
+    function updateHeader() {
+        const stats = getStats();
+        document.getElementById('statsAnswered').textContent = stats.questionsAnswered;
+        document.getElementById('statsCorrect').textContent = stats.correctAnswers;
+        document.getElementById('statsAccuracy').textContent = stats.accuracy + '%';
+    }
+
+    // Get filtered questions
+    function getFilteredQuestions() {
+        return CISSP_QUESTIONS.filter(q => {
+            if (state.selectedDomain && q.domain !== state.selectedDomain) return false;
+            if (state.selectedDifficulty && q.difficulty !== state.selectedDifficulty) return false;
+            return true;
+        });
+    }
+
+    // Render Dashboard View
+    function renderDashboard() {
+        const stats = getStats();
+        const html = `
+            <div class="dashboard">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-title">Total Questions Practiced</div>
+                    <div class="dashboard-card-value">${stats.questionsAnswered}</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${Math.min((stats.questionsAnswered / 250) * 100, 100)}%"></div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-title">Overall Accuracy</div>
+                    <div class="dashboard-card-value">${stats.accuracy}%</div>
+                    <div class="dashboard-card-subtitle">${stats.correctAnswers} of ${stats.questionsAnswered} correct</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-title">Domains Mastered</div>
+                    <div class="dashboard-card-value">${Object.values(stats.domainStats).filter(d => d.correct === d.total).length}</div>
+                    <div class="dashboard-card-subtitle">out of ${Object.keys(stats.domainStats).length} domains</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-title">Estimated Readiness</div>
+                    <div class="dashboard-card-value">
+                        ${stats.accuracy >= 75 ? '✅ Ready' : stats.accuracy >= 60 ? '🟡 Getting Close' : '🔄 Keep Studying'}
+                    </div>
+                    <div class="dashboard-card-subtitle">Based on current performance</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <h3 style="margin-bottom: 20px; color: var(--primary);">Performance by Domain</h3>
+                ${Object.entries(stats.domainStats).map(([domain, data]) => `
+                    <div style="margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="font-size: 14px;">${domain}</span>
+                            <span style="color: var(--primary); font-weight: 600;">${data.correct}/${data.total}</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${(data.correct / data.total) * 100}%"></div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        document.getElementById('contentArea').innerHTML = html;
+    }
+
+    // Render Practice View
+    function renderPractice() {
+        const questions = getFilteredQuestions();
+        const domains = [...new Set(CISSP_QUESTIONS.map(q => q.domain))];
+        const difficulties = ['easy', 'medium', 'hard'];
+        
+        if (questions.length === 0) {
+            document.getElementById('contentArea').innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">📚</div>
+                    <div class="empty-state-title">No Questions Match Your Filters</div>
+                    <p>Try adjusting your filters</p>
+                </div>
+            `;
+            return;
+        }
+
+        const question = questions[state.currentQuestionIndex];
+        const selectedAnswer = state.selectedAnswers[question.id];
+
+        const html = `
+            <div class="filters">
+                <span style="font-size: 12px; color: var(--text-secondary); align-self: center; text-transform: uppercase; font-weight: 600; margin-right: 10px;">Domain:</span>
+                <button class="filter-chip ${!state.selectedDomain ? 'active' : ''}" onclick="setDomain(null)">All Domains</button>
+                ${domains.map(domain => `
+                    <button class="filter-chip ${state.selectedDomain === domain ? 'active' : ''}" onclick="setDomain('${domain}')">
+                        ${domain}
+                    </button>
+                `).join('')}
+            </div>
+
+            <div class="filters">
+                <span style="font-size: 12px; color: var(--text-secondary); align-self: center; text-transform: uppercase; font-weight: 600; margin-right: 10px;">Difficulty:</span>
+                <button class="filter-chip ${!state.selectedDifficulty ? 'active' : ''}" onclick="setDifficulty(null)">All Levels</button>
+                ${difficulties.map(diff => `
+                    <button class="filter-chip ${state.selectedDifficulty === diff ? 'active' : ''}" onclick="setDifficulty('${diff}')">
+                        ${diff.charAt(0).toUpperCase() + diff.slice(1)}
+                    </button>
+                `).join('')}
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <div>
+                        <div class="question-number">Question ${state.currentQuestionIndex + 1} of ${questions.length}</div>
+                        <div class="question-meta">
+                            <span class="badge badge-domain">${question.domain}</span>
+                            <span class="badge badge-difficulty ${question.difficulty}">${question.difficulty}</span>
+                        </div>
+                    </div>
+                    <button class="bookmark-btn ${state.bookmarked.has(question.id) ? 'bookmarked' : ''}" onclick="toggleBookmark(${question.id})">★</button>
+                </div>
+
+                <div class="question-text">${question.question}</div>
+
+                <div class="options">
+                    ${question.options.map((option, index) => {
+                        const isSelected = selectedAnswer === index;
+                        const isCorrect = index === question.correctAnswer;
+                        let optionClass = '';
+                        
+                        if (selectedAnswer !== undefined) {
+                            if (isSelected && isCorrect) optionClass = 'correct';
+                            else if (isSelected && !isCorrect) optionClass = 'incorrect';
+                            else if (isCorrect) optionClass = 'correct';
+                        } else if (isSelected) {
+                            optionClass = 'selected';
+                        }
+
+                        return `
+                            <button class="option ${optionClass}" onclick="selectAnswer(${question.id}, ${index})">
+                                <span class="option-label">${String.fromCharCode(65 + index)}</span>
+                                <span>${option}</span>
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+
+                ${selectedAnswer !== undefined ? `
+                    <div class="explanation">
+                        <strong>💡 Explanation:</strong> ${question.explanation}
+                    </div>
+                ` : ''}
+            </div>
+
+            <div class="buttons-group">
+                <button class="btn btn-secondary" onclick="prevQuestion()" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>← Previous</button>
+                <button class="btn btn-secondary" disabled>${state.currentQuestionIndex + 1} / ${questions.length}</button>
+                <button class="btn btn-primary" onclick="nextQuestion()" ${state.currentQuestionIndex === questions.length - 1 ? 'disabled' : ''}>Next →</button>
+            </div>
+        `;
+        document.getElementById('contentArea').innerHTML = html;
+    }
+
+    // Render Exam View
+    function renderExam() {
+        if (!state.examStarted) {
+            const html = `
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <div class="question-card">
+                        <h2 style="margin-bottom: 20px; color: var(--primary);">CISSP Mock Exam</h2>
+                        <div style="line-height: 1.8; margin-bottom: 30px; color: var(--text-secondary);">
+                            <p style="margin-bottom: 10px;">📋 <strong>Format:</strong> Full exam with all questions</p>
+                            <p style="margin-bottom: 10px;">⏱️ <strong>Time Limit:</strong> 3 hours</p>
+                            <p style="margin-bottom: 10px;">✔️ <strong>Passing Score:</strong> ~70-75%</p>
+                            <p style="margin-bottom: 10px;">📊 <strong>Format:</strong> Multiple choice with one correct answer</p>
+                        </div>
+                        <div style="background: rgba(245, 158, 11, 0.1); padding: 15px; border-radius: 8px; border-left: 3px solid var(--warning); margin-bottom: 30px;">
+                            <strong>⚠️ Important:</strong> This is a timed exam. Once you start, you cannot pause.
+                        </div>
+                        <button class="btn btn-primary" onclick="startExam()" style="width: 100%; padding: 12px;">Start Exam</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = html;
+        } else {
+            const questions = getFilteredQuestions();
+            const question = questions[state.currentQuestionIndex];
+            const selectedAnswer = state.selectedAnswers[question.id];
+
+            const html = `
+                <div class="question-card">
+                    <div class="question-header">
+                        <div>
+                            <div class="question-number">Question ${state.currentQuestionIndex + 1} of ${questions.length}</div>
+                            <div class="question-meta">
+                                <span class="badge badge-domain">${question.domain}</span>
+                                <span class="badge badge-difficulty ${question.difficulty}">${question.difficulty}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-text">${question.question}</div>
+
+                    <div class="options">
+                        ${question.options.map((option, index) => {
+                            const isSelected = selectedAnswer === index;
+                            const optionClass = isSelected ? 'selected' : '';
+
+                            return `
+                                <button class="option ${optionClass}" onclick="selectAnswer(${question.id}, ${index})">
+                                    <span class="option-label">${String.fromCharCode(65 + index)}</span>
+                                    <span>${option}</span>
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+
+                <div class="buttons-group">
+                    <button class="btn btn-secondary" onclick="prevQuestion()" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>← Previous</button>
+                    <button class="btn btn-secondary" disabled>${state.currentQuestionIndex + 1} / ${questions.length}</button>
+                    ${state.currentQuestionIndex === questions.length - 1 
+                        ? `<button class="btn btn-primary" onclick="finishExam()">Finish Exam ✓</button>`
+                        : `<button class="btn btn-primary" onclick="nextQuestion()">Next →</button>`
+                    }
+                </div>
+            `;
+            document.getElementById('contentArea').innerHTML = html;
+        }
+    }
+
+    // Render Bookmarks View
+    function renderBookmarks() {
+        const bookmarkedQuestions = CISSP_QUESTIONS.filter(q => state.bookmarked.has(q.id));
+        
+        if (bookmarkedQuestions.length === 0) {
+            document.getElementById('contentArea').innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">⭐</div>
+                    <div class="empty-state-title">No Bookmarked Questions</div>
+                    <p>Bookmark questions while studying to review them later</p>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        bookmarkedQuestions.forEach((question, idx) => {
+            const selectedAnswer = state.selectedAnswers[question.id];
+            const isCorrect = selectedAnswer === question.correctAnswer;
+
+            let optionsHtml = question.options.map((option, index) => {
+                const isSelected = selectedAnswer === index;
+                let optionClass = '';
+                
+                if (selectedAnswer !== undefined) {
+                    if (isSelected && isCorrect) optionClass = 'correct';
+                    else if (isSelected && !isCorrect) optionClass = 'incorrect';
+                    else if (index === question.correctAnswer) optionClass = 'correct';
+                } else if (isSelected) {
+                    optionClass = 'selected';
+                }
+
+                return `
+                    <button class="option ${optionClass}" onclick="selectAnswer(${question.id}, ${index})">
+                        <span class="option-label">${String.fromCharCode(65 + index)}</span>
+                        <span>${option}</span>
+                    </button>
+                `;
+            }).join('');
+
+            html += `
+                <div class="question-card">
+                    <div class="question-header">
+                        <div>
+                            <div class="question-number">Question ${idx + 1} of ${bookmarkedQuestions.length}</div>
+                            <div class="question-meta">
+                                <span class="badge badge-domain">${question.domain}</span>
+                                <span class="badge badge-difficulty ${question.difficulty}">${question.difficulty}</span>
+                            </div>
+                        </div>
+                        <button class="bookmark-btn bookmarked" onclick="toggleBookmark(${question.id})">★</button>
+                    </div>
+
+                    <div class="question-text">${question.question}</div>
+
+                    <div class="options">${optionsHtml}</div>
+
+                    ${selectedAnswer !== undefined ? `
+                        <div class="explanation">
+                            <strong>💡 Explanation:</strong> ${question.explanation}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        });
+
+        document.getElementById('contentArea').innerHTML = html;
+    }
+
+    // Render Results View
+    function renderResults() {
+        const stats = getStats();
+        let domainHtml = Object.entries(stats.domainStats).map(([domain, data]) => {
+            const percentage = ((data.correct / data.total) * 100).toFixed(0);
+            return `
+                <div style="margin-bottom: 25px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="font-size: 14px; font-weight: 500;">${domain}</span>
+                        <span style="color: var(--primary); font-weight: 600;">${data.correct}/${data.total} (${percentage}%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${percentage}%"></div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        const html = `
+            <div class="dashboard">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-title">Final Accuracy</div>
+                    <div class="dashboard-card-value">${stats.accuracy}%</div>
+                    <div class="dashboard-card-subtitle">${stats.correctAnswers} of ${stats.questionsAnswered} correct</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-title">Exam Status</div>
+                    <div class="dashboard-card-value">${stats.accuracy >= 75 ? '✅ PASS' : '❌ FAIL'}</div>
+                    <div class="dashboard-card-subtitle">Passing score: 70-75%</div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <h3 style="margin-bottom: 20px; color: var(--primary);">Domain Performance</h3>
+                ${domainHtml}
+            </div>
+        `;
+        document.getElementById('contentArea').innerHTML = html;
+    }
+
+    // Render Study Guide View
+    function renderStudyGuide() {
+        const domains = [...new Set(CISSP_QUESTIONS.map(q => q.domain))];
+        
+        const studyGuide = {
+            'Security & Risk Management': [
+                '• Risk Assessment: Identify, analyze, and evaluate risks',
+                '• Risk Treatment: Mitigation, acceptance, avoidance, or transfer',
+                '• Business Impact Analysis: Quantify impact of disruptions',
+                '• Governance Framework: Policies, procedures, and oversight',
+                '• Compliance: Regulatory requirements and standards'
+            ],
+            'Asset Security': [
+                '• Data Classification: Levels and protection requirements',
+                '• Data Lifecycle: Creation, use, archival, and destruction',
+                '• Media Management: Secure handling and disposal',
+                '• Encryption: Data at rest and in transit',
+                '• Access Controls: Physical and logical security'
+            ],
+            'Security Architecture & Design': [
+                '• Least Privilege: Minimum necessary access',
+                '• Defense in Depth: Multiple overlapping controls',
+                '• Network Segmentation: Isolation and zone boundaries',
+                '• Cloud Security: Shared responsibility model',
+                '• Wireless Security: 802.11 encryption standards'
+            ],
+            'Communication & Network Security': [
+                '• OSI Model: Layers and security implications',
+                '• Network Protocols: TCP/IP, DNS, DHCP security',
+                '• Firewalls: Stateful, stateless, next-generation',
+                '• VPN: IPSec, SSL/TLS, and tunneling',
+                '• PKI: Certificates, CAs, and digital signatures'
+            ],
+            'Identity & Access Management': [
+                '• AAA: Authentication, Authorization, Accounting',
+                '• MFA: Multiple factors for strong authentication',
+                '• Identity Governance: Provisioning and deprovisioning',
+                '• RBAC vs ABAC: Role-based and attribute-based control',
+                '• Single Sign-On: Centralized authentication'
+            ],
+            'Security Assessment & Testing': [
+                '• Vulnerability Assessment: Automated scanning',
+                '• Penetration Testing: Active exploitation attempts',
+                '• Security Audits: Compliance and control verification',
+                '• Black/White/Gray Box: Testing with different knowledge levels',
+                '• Remediation: Prioritization and verification'
+            ],
+            'Security Operations': [
+                '• Incident Response: Detection, response, recovery phases',
+                '• SIEM: Centralized log aggregation and correlation',
+                '• SOC: 24/7 monitoring and threat response',
+                '• Disaster Recovery: RTO and RPO objectives',
+                '• Business Continuity: Continuity planning and testing'
+            ],
+            'Software Development Security': [
+                '• SDLC: Integration of security throughout development',
+                '• Secure Coding: Input validation, output encoding',
+                '• Code Review: Manual and automated analysis',
+                '• OWASP Top 10: Common web application vulnerabilities',
+                '• DevSecOps: Security automation in CI/CD pipelines'
+            ]
+        };
+
+        let html = '';
+        domains.forEach(domain => {
+            html += `
+                <div class="question-card" style="margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px; color: var(--primary); cursor: pointer;" onclick="toggleStudyGuide('${domain}')">
+                        ${domain}
+                        <span style="font-size: 14px; float: right;">▼</span>
+                    </h3>
+                    <div class="study-guide-content">
+                        ${studyGuide[domain]?.map(point => `<div class="study-guide-point">${point}</div>`).join('')}
+                    </div>
+                </div>
+            `;
+        });
+
+        document.getElementById('contentArea').innerHTML = html;
+    }
+
+    // Event Handlers
+    function selectAnswer(questionId, answerIndex) {
+        state.selectedAnswers[questionId] = answerIndex;
+        
+        const question = CISSP_QUESTIONS.find(q => q.id === questionId);
+        state.progress[questionId] = {
+            correct: answerIndex === question.correctAnswer,
+            timestamp: Date.now()
+        };
+
+        saveData();
+        updateHeader();
+        
+        // Re-render current view
+        const viewHandlers = {
+            'dashboard': renderDashboard,
+            'practice': renderPractice,
+            'exam': renderExam,
+            'bookmarks': renderBookmarks,
+            'results': renderResults,
+            'study': renderStudyGuide
+        };
+        viewHandlers[state.currentView]?.();
+    }
+
+    function toggleBookmark(questionId) {
+        if (state.bookmarked.has(questionId)) {
+            state.bookmarked.delete(questionId);
+        } else {
+            state.bookmarked.add(questionId);
+        }
+        saveData();
+        
+        const viewHandlers = {
+            'dashboard': renderDashboard,
+            'practice': renderPractice,
+            'exam': renderExam,
+            'bookmarks': renderBookmarks,
+            'results': renderResults,
+            'study': renderStudyGuide
+        };
+        viewHandlers[state.currentView]?.();
+    }
+
+    function nextQuestion() {
+        const questions = getFilteredQuestions();
+        if (state.currentQuestionIndex < questions.length - 1) {
+            state.currentQuestionIndex++;
+            const viewHandlers = {
+                'dashboard': renderDashboard,
+                'practice': renderPractice,
+                'exam': renderExam,
+                'bookmarks': renderBookmarks,
+                'results': renderResults,
+                'study': renderStudyGuide
+            };
+            viewHandlers[state.currentView]?.();
+        }
+    }
+
+    function prevQuestion() {
+        if (state.currentQuestionIndex > 0) {
+            state.currentQuestionIndex--;
+            const viewHandlers = {
+                'dashboard': renderDashboard,
+                'practice': renderPractice,
+                'exam': renderExam,
+                'bookmarks': renderBookmarks,
+                'results': renderResults,
+                'study': renderStudyGuide
+            };
+            viewHandlers[state.currentView]?.();
+        }
+    }
+
+    function setDomain(domain) {
+        state.selectedDomain = domain;
+        state.currentQuestionIndex = 0;
+        renderPractice();
+    }
+
+    function setDifficulty(difficulty) {
+        state.selectedDifficulty = difficulty;
+        state.currentQuestionIndex = 0;
+        renderPractice();
+    }
+
+    function startExam() {
+        state.examStarted = true;
+        state.currentQuestionIndex = 0;
+        state.selectedAnswers = {};
+        renderExam();
+    }
+
+    function finishExam() {
+        state.examStarted = false;
+        state.currentView = 'results';
+        updateNavigation();
+        renderResults();
+    }
+
+    function toggleStudyGuide(domain) {
+        // Simple toggle for study guide
+        renderStudyGuide();
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+        const body = document.body;
+        const toggle = document.getElementById('themeToggle');
+        
+        body.classList.toggle('light-mode');
+        
+        // Update toggle button icon
+        if (body.classList.contains('light-mode')) {
+            toggle.textContent = '☀️';
+            toggle.title = 'Switch to dark mode';
+            localStorage.setItem('theme', 'light');
+        } else {
+            toggle.textContent = '🌙';
+            toggle.title = 'Switch to light mode';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+
+    // Load theme preference
+    function loadTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const body = document.body;
+        const toggle = document.getElementById('themeToggle');
+        
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            toggle.textContent = '☀️';
+            toggle.title = 'Switch to dark mode';
+        } else {
+            body.classList.remove('light-mode');
+            toggle.textContent = '🌙';
+            toggle.title = 'Switch to light mode';
+        }
+    }
+
+    // Navigation
+    function updateNavigation() {
+        document.querySelectorAll('.nav-item').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.querySelector(`[data-view="${state.currentView}"]`)?.classList.add('active');
+
+        const titles = {
+            'dashboard': 'Dashboard',
+            'practice': 'Practice Mode',
+            'exam': 'Mock Exam',
+            'bookmarks': 'Bookmarked Questions',
+            'results': 'Performance Results',
+            'study': 'Study Guide'
+        };
+        document.getElementById('headerTitle').textContent = titles[state.currentView];
+    }
+
+    function switchView(view) {
+        state.currentView = view;
+        state.currentQuestionIndex = 0;
+        updateNavigation();
+        updateHeader();
+
+        const viewHandlers = {
+            'dashboard': renderDashboard,
+            'practice': renderPractice,
+            'exam': renderExam,
+            'bookmarks': renderBookmarks,
+            'results': renderResults,
+            'study': renderStudyGuide
+        };
+        viewHandlers[view]?.();
+    }
+
+    // Initialize
+    // Load theme first
+    loadTheme();
+    
+    // Set up event listeners
+    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+    
+    document.querySelectorAll('.nav-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            switchView(e.target.closest('.nav-item').dataset.view);
+        });
+    });
+
+    // Load data and render
+    loadData();
+    updateHeader();
+    renderDashboard();
+</script>
+```
+
+</body>
+</html>
